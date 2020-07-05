@@ -4,6 +4,7 @@ slug: first-chapter
 ---
 
 # Overview
+![Mood Gif](assets/01_getting-started_mood.gif "Mood Gif")
 
 Did you know your emotions can change how you taste food?  I think everyone agrees that they would want their foods to taste good! 🥗🍔🍕🍇😋
 Imagine if there was a place where you could go to and buy any type of mood you want. 
