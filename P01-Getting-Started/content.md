@@ -49,6 +49,19 @@ Lastly, the commit prompts in this tutorial should be the minimum amount of time
 
 # Git Setup
 
+> [action] Start by creating your project folder with the name **mood-shop**. 
+```bash
+mkdir mood-shop
+```
+
+>[action] go into your project folder 
+```bash
+cd mood-shop
+```
+>[action] create an index.html file
+```bash
+touch index.html
+```
 
 ```
 # Set Up Git/GitHub
