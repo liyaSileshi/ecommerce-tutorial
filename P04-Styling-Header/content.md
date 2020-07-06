@@ -92,5 +92,66 @@ The flex container becomes flexible by setting the **display** property to flex.
 The class name for header is '**page-header**’. 
 we use dot (.) before the name when referring to class names in css files.
 
-For example **.page-header**
+For example:  **.page-header**
 
+>[action] Inside your styles.css file, add the styles for page-header.
+
+```css
+.page-header {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+  	background-color: bisque;
+}
+```
+
+>[action] Refresh your web page again. You should see the title and navbar lists in rows. 
+
+The navbar itself is not in rows, because the lists are inside the ```<ul>``` container. Hence we need to use flexbox on it to display the elements in rows. 
+
+>[info] To select the ```<ul>``` tag, we can use **.page-header ul**
+This will select ```<ul>``` elements inside the page-header class.
+
+>[action] Add this code to style the navbar lists.
+```css
+.page-header ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+```
+>[action] Refresh your page again. You should now see the lists in rows. 
+
+To remove the bullet points in each list, we can set the property list-style to none in the ```<ul>``` tag. 
+
+>[action] Modify your **.page-header ul**
+
+```css
+.page-header ul{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  list-style: none;
+}
+```
+The last style we need to add to the navbar is
+1. adding spaces between the nav links
+1. removing the underlines (text decorations) on the ```<a>``` tags. 
+
+```css
+.page-header a{
+  display: block;
+  padding:0.5em;
+  text-decoration:none;
+} 
+```
+
+Congrats! You have just made a decent looking navbar using CSS.
+
+Now is a good time to update your progress on Github.
+
+```bash
+git add .
+git commit -m ‘styled the header and navbar’
+git push
+```
