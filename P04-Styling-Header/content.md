@@ -74,8 +74,8 @@ We need to use ```<link>``` tag inside the ```<head>``` element to link our css 
 Sweet! We see some font change!
 
 We want our Webiste name to be on the left side and the navigation links (Home, about, cart) to be on the other side. For this, we will use **flexbox layout**.
- 
-**Enter example screenshot!!!!!!!!!**
+
+![Navbar Example](assets/01_styling-header_navbar-example.png "Navbar example")
 
 # What is flexbox?
 
@@ -101,7 +101,7 @@ For example:  **.page-header**
 	display: flex;
 	flex-direction: row;
 	justify-content: space-between;
-  	background-color: bisque;
+  background-color: bisque;
 }
 ```
 
@@ -145,6 +145,13 @@ The last style we need to add to the navbar is
   text-decoration:none;
 } 
 ```
+
+# Stretch Challenge
+
+> [challenge]
+> Change the background color of the navbar
+>
+> Customize the navbar by changing the font size and font family to your desired choice.
 
 Congrats! You have just made a decent looking navbar using CSS.
 

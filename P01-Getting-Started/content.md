@@ -1,6 +1,6 @@
 ---
-title: "Writing the First Chapter"
-slug: first-chapter
+title: "Getting Started"
+slug: getting-started
 ---
 
 # Overview
