@@ -151,7 +151,154 @@ img.height = 300
 
 
 ```console.log``` is a way to print our progress. Once we make the image, we are printing it to the console to see if it's being created. It is a good way to make sure if your code is working the way it's supposed to. 
-On your browser, right click and select inspect element. Navigate to console. You should see image tags. 
+
+>[action] On your browser, right click and select inspect element. Navigate to console. You should see image tags. 
 
 ![Console log img](assets/02_displaying-moods_console-log-img.png "Console log img")
 
+
+Now that we have created the image, we can append it to the div element we created.
+We want our result to be,
+
+```html
+<div>
+  <img src=’/resource...’ width=300 height=300> 
+</div> 
+```
+
+```js
+newDiv.appendChild(img)
+```
+
+Now that we have the div with the image, let’s go ahead and append it to the main container, so that we could display it on our page.
+
+```js
+itemsContainer.appendChild(newDiv)
+```
+
+Our code should look like this.
+```js
+for (let i=0; i<data.length; ++i) {
+let newDiv = document.createElement('div');
+ 	newDiv.className = 'item'
+  // display the image
+  let img = document.createElement('img');
+  img.src = data[i].image
+  img.width = 300
+  img.height = 300
+  newDiv.appendChild(img)
+  // put new div inside items container
+  itemsContainer.appendChild(newDiv)
+}
+```
+
+>[challenge] Inside the forloop, create a paragraph element for both description and price to be displayed
+
+***Hint***: After you create the element, use ```element.InnerText``` to add the text description and price. 
+
+This is what we want our js to make.
+```html
+<div>
+  <img src=’/resource...’ width=300 height=300> 
+  <p>description of mood</p>
+  <p>5.99</p>
+</div> 
+```
+
+>[solution]  
+>``` js
+>  let desc = document.createElement('P')
+>  desc.innerText =data[i].desc
+>  newDiv.appendChild(desc)
+>  let price = document.createElement('P')
+>  price.innerText = data[i].price
+>  newDiv.appendChild(price)
+>```
+
+If you open your browser, you should now be able to see something like this. 🎉🎊
+
+![Display without button](assets/03_displaying-moods_display-without-button.png "display without button")
+
+# Stretch challenge: 
+>[challenge] Use the ES6 javascript syntax forEach loop instead of the normal for loop.
+[ES6 for each loop](https://gomakethings.com/looping-through-arrays-the-es6-way/) 
+
+
+The next thing to do would be adding an ‘Add To Cart’ button for each of the moods. 
+
+We will be adding a button element using javascript. This will be in the same for loop we used to create the image, description and prices. 
+
+>[action]After the line where you created the price, add a line to create a button element. 
+
+```js
+let button = document.createElement('button')
+```
+
+We should also make the id of each button unique. To do this we will assign the id to the name of the mood.
+
+```js
+button.id = data[i].name
+```
+
+There needs to be a way to access the price of each Mood when their “Add to Cart” button is clicked. 🤔
+
+We will use a ***custom data attribute*** to store the price for each mood on the button. 💡
+
+[data- attributes](https://www.w3schools.com/tags/att_data-.asp) 
+
+[custom data attributes](http://html5doctor.com/html5-custom-data-attributes/) 
+
+```js
+// creates a custom attribute called data-price. That will hold price for each element in the button
+button.dataset.price = data[i].price
+button.innerHTML = "Add to Cart"
+newDiv.appendChild(button)
+```
+
+At this point, our for-loop should create image, descrption, price and 'Add to Cart' button for each mood in the data array.
+
+```js
+for (let i=0; i<data.length; ++i) {
+  let newDiv = document.createElement('div');
+ 	newDiv.className = 'item'
+  // display the image
+  let img = document.createElement('img');
+  img.src = data[i].image
+  img.width = 300
+  img.height = 300
+  newDiv.appendChild(img)
+
+  let desc = document.createElement('P')
+  desc.innerText =data[i].desc
+  newDiv.appendChild(desc)
+  let price = document.createElement('P')
+  price.innerText = data[i].price
+  newDiv.appendChild(price)
+
+  let button = document.createElement('button')
+  button.id = data[i].name
+
+  // creates a custom attribute called data-price.   That will hold price for each element
+  // in the button
+  button.dataset.price = data[i].price
+  button.innerHTML = "Add to Cart"
+  newDiv.appendChild(button)
+  // put new div inside items container
+  itemsContainer.appendChild(newDiv)
+}
+```
+
+Your page should now show each mood, with description, price and button. 
+
+![Display with button](assets/04_displaying-moods_display-with-button.png "display with button")
+
+
+Congrats! You have just learned how to display items dynamically using javascript. 🎉🎊
+
+Now is a good time to update your progress on Github.
+
+```bash
+git add .
+git commit -m ‘displayed moods with button using javascript’
+git push
+```
